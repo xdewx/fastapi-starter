@@ -1,8 +1,8 @@
 repos:
-  # - repo: https://github.com/akaihola/darker
-  #   rev: v2.1.1
-  #   hooks:
-  #     - id: darker
+  - repo: https://github.com/akaihola/darker
+    rev: v2.1.1
+    hooks:
+      - id: darker
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
     rev: v0.14.8
