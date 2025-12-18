@@ -9,7 +9,10 @@ authors = [{ name = "xdewx", email = "present150608@sina.com" }]
 readme = "README.md"
 requires-python = ">=3.10"
 
-dependencies = []
+dependencies = [
+    "typer>=0.20.0",
+    "typing-extensions>=4.15.0",
+]
 
 # 使用uv_build时
 # [build-system]

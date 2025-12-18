@@ -7,6 +7,7 @@
 3. darker for code format
 4. ruff for lint
 5. commitlint for commit message format
+6. typer for cli
 
 ## 使用方式
 
@@ -14,6 +15,6 @@
 
 - 执行测试：`uv run -m pytest`
 
-- 启动服务：`uv run main.py`
+- 运行cli：`uv run main.py --help`
 
 - 构建发布：`./scripts/publish`
