@@ -11,12 +11,19 @@
 
 ## 使用方式
 
-- 初始化环境：`./scripts/setup`
+- 初始化环境：
+    `./scripts/setup`
 
-- 执行测试：`uv run -m pytest`
+- 执行测试：
+    `uv run -m pytest`
 
-- 运行cli：`uv run main.py --help`
+- 运行cli：
+    `uv run main.py --help`
 
-- 构建发布：`./scripts/publish`
+- 构建发布：
+    1. `cp .pypirc.example .pypirc`
+    2. replace your token in .pypirc
+    3. `./scripts/publish`
 
-- 构建可执行文件：`./scripts/build`
+- 构建可执行文件：
+    `./scripts/build`
