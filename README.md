@@ -1,4 +1,4 @@
-# pyproject-tmpl
+# fastapi-starter
 
 ## features
 
@@ -20,9 +20,12 @@
 - 运行cli：
     `uv run main.py --help`
 
+- 运行服务：
+    `uv run main.py serve`
+
 - 构建发布：
     1. `cp .pypirc.example .pypirc`
-    2. replace your token in .pypirc
+    2. replace your token in `.pypirc`
     3. `git tag vx.y.z`
     4. `./scripts/publish`
 
