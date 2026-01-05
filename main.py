@@ -1,9 +1,8 @@
-from biz import demo_biz_add
-
+import uvicorn
+from fastapi import FastAPI
 from typer import Typer
 
-from fastapi import FastAPI
-import uvicorn
+from biz import demo_biz_add
 
 app = FastAPI()
 
@@ -30,6 +29,9 @@ def sub(a: int, b: int) -> int:
 
 @cmd.command()
 def serve(host: str = "0.0.0.0", port: int = 8000):
+    from conf import setup_database
+
+    setup_database()
 
     uvicorn.run(app, host=host, port=port)
 

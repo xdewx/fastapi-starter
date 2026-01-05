@@ -8,3 +8,5 @@ build
 .pypirc
 
 src/sdk/_version.py
+
+data
