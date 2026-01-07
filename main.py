@@ -17,5 +17,13 @@ def sub(a: int, b: int) -> int:
     return c
 
 
+@cmd.command()
+def setup_db():
+    from conf import setup_database
+
+    # if you need to use database, invoke setup_database freely
+    setup_database()
+
+
 if __name__ == "__main__":
     cmd()
