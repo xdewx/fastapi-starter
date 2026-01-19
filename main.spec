@@ -1,8 +1,11 @@
 # -*- mode: python ; coding: utf-8 -*-
 
 datas=[
+    ("src/conf","conf"),
     ("src/sdk","sdk"),
     ("src/biz","biz"),
+    ("alembic","alembic"),
+    ("alembic.ini","."),
 ]
 
 a = Analysis(
@@ -10,7 +13,27 @@ a = Analysis(
     pathex=[],
     binaries=[],
     datas=datas,
-    hiddenimports=[],
+    hiddenimports=[
+        "colorlog",
+        'scipy', 'scipy._cyutility',
+        'sqlalchemy', 'sqlmodel', "sqlalchemy.sql.default_comparator",
+        "sqlalchemy.engine.url", "sqlalchemy.dialects.sqlite",
+        'sqlite3',
+        "uvicorn.logging",          # 核心日志模块
+        "uvicorn.logging.DefaultFormatter",  # 显式指定默认格式化器
+        "logging.config",           # Python 标准库日志配置
+        "colorama",                  # 若使用颜色日志，需添加（Uvicorn 可能依赖）
+        "uvicorn.loops",
+        "uvicorn.loops.auto",
+        "uvicorn.protocols",
+        "uvicorn.protocols.http",
+        "uvicorn.protocols.http.auto",
+        "uvicorn.protocols.websockets",
+        "uvicorn.protocols.websockets.auto",
+        "uvicorn.lifespan",
+        "uvicorn.lifespan.on",
+        "fastapi.middleware.cors"
+    ],
     hookspath=[],
     hooksconfig={},
     runtime_hooks=[],

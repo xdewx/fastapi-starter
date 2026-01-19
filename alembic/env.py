@@ -10,10 +10,12 @@ from conf import setup_alembic
 # access to the values within the .ini file in use.
 config = context.config
 
+setup_alembic(config)
+
 # Interpret the config file for Python logging.
 # This line sets up loggers basically.
 if config.config_file_name is not None:
-    fileConfig(config.config_file_name, encoding="utf-8")
+    fileConfig(config.config_file_name)
 
 
 # add your model's MetaData object here
@@ -42,8 +44,6 @@ def run_migrations_offline() -> None:
     script output.
 
     """
-    setup_alembic(config)
-
     url = config.get_main_option("sqlalchemy.url")
     context.configure(
         url=url,
@@ -63,8 +63,6 @@ def run_migrations_online() -> None:
     and associate a connection with the context.
 
     """
-    setup_alembic(config)
-
     connectable = engine_from_config(
         config.get_section(config.config_ini_section, {}),
         prefix="sqlalchemy.",

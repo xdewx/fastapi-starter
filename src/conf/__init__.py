@@ -32,7 +32,8 @@ DB_URL = f"sqlite:///{DATA_DIR / f'{APP_NAME}.db'}"
 
 def setup_alembic(config: Union[Config, None] = None):
     """
-    使用动态数据库URL
+    如果alembic中配置了sqlalchemy.url，则使用该URL；
+    否则，使用conf中定义的DB_URL
     """
     cfg = config or Config(RUNTIME_ROOT_DIR / "alembic.ini")
     if not cfg.get_main_option("sqlalchemy.url"):
