@@ -2,6 +2,7 @@
 logs
 dist
 build
+data
 *.log
 
 **/*.egg-info
@@ -9,4 +10,4 @@ build
 
 src/sdk/_version.py
 
-data
+!scripts/**
