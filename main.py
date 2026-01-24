@@ -8,7 +8,7 @@ from typer import Typer
 # TODO: i don't want to add this manually, but i have no idea how to do it automatically at present
 sys.path.append(str(Path(__file__).parent / "src"))
 
-print(sys.path)
+# print(sys.path)
 
 from biz import demo_biz_add
 
@@ -33,6 +33,13 @@ def sub(a: int, b: int) -> int:
     c = a - b
     print(f"sub({a}, {b}) = {c}")
     return c
+
+
+@cmd.command()
+def version():
+    from my_sdk.version import version
+
+    print(version)
 
 
 @cmd.command()
