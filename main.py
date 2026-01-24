@@ -1,6 +1,14 @@
+import sys
+from pathlib import Path
+
 import uvicorn
 from fastapi import FastAPI
 from typer import Typer
+
+# TODO: i don't want to add this manually, but i have no idea how to do it automatically at present
+sys.path.append(str(Path(__file__).parent / "src"))
+
+print(sys.path)
 
 from biz import demo_biz_add
 
