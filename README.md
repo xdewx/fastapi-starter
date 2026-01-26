@@ -39,6 +39,8 @@ before you start:
 
 `uv run main.py serve`
 
+> if you have `html` files need to `serve`, please put them in `static` folder.
+
 ### release sdk
 
 1. `cp .pypirc.example .pypirc`

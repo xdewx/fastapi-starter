@@ -6,6 +6,8 @@ datas=[
     ("src/biz","biz"),
     ("alembic","alembic"),
     ("alembic.ini","."),
+    ("sidecar","sidecar"),
+    ("static","static"),
 ]
 
 a = Analysis(

@@ -3,7 +3,10 @@ from pathlib import Path
 
 import uvicorn
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 from typer import Typer
+
+from conf import STATIC_DIR
 
 # TODO: i don't want to add this manually, but i have no idea how to do it automatically at present
 sys.path.append(str(Path(__file__).parent / "src"))
@@ -13,15 +16,10 @@ sys.path.append(str(Path(__file__).parent / "src"))
 from biz import demo_biz_add
 
 app = FastAPI()
-
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
+app.mount("/", StaticFiles(directory=STATIC_DIR, html=True), name="static")
 
 
 cmd = Typer()
-
 
 @cmd.command()
 def add(a: int, b: int) -> int:
@@ -40,6 +38,13 @@ def version():
     from my_sdk.version import version
 
     print(version)
+
+
+@cmd.command()
+def setup_db():
+    from conf import setup_database
+
+    setup_database()
 
 
 @cmd.command()

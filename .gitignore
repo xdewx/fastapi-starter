@@ -11,3 +11,6 @@ data
 src/my_sdk/version.py
 
 !scripts/**
+sidecar
+
+static
